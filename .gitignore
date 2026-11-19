@@ -1,0 +1,15 @@
+.env
+data/images/
+data/rejected/
+data/verdict_cache.json
+logs/
+checkpoints/
+__pycache__/
+*.pyc
+.venv/
+runs/*
+!runs/full-384/
+runs/full-384/*.tfevents*
+wandb/
+
+

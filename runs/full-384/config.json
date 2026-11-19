@@ -1,0 +1,29 @@
+{
+  "run_name": "full-384",
+  "arguments": {
+    "epochs": 60,
+    "batch_size": 8,
+    "size": 384,
+    "width": 32,
+    "lr": 0.00025,
+    "weight_decay": 0.0001,
+    "warmup_epochs": 2.0,
+    "patience": 12,
+    "workers": 2,
+    "seed": 0,
+    "device": "cpu",
+    "run_name": "full-384",
+    "limit_batches": null
+  },
+  "is_smoke_test": false,
+  "train_images": 175,
+  "batches_per_epoch": 21,
+  "model_parameters": 2576488,
+  "class_names": [
+    "car",
+    "truck",
+    "traffic light",
+    "person"
+  ],
+  "device": "cpu"
+}

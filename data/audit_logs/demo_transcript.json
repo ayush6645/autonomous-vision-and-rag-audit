@@ -1,0 +1,560 @@
+[
+  {
+    "scenario": 1,
+    "question": "Are there suspiciously small bounding boxes in this dataset? Quantify how small, say which classes they belong to, and tell me whether they are likely to be labelling errors.",
+    "model": "gemini-3.1-flash-lite",
+    "retrieved_chunk_ids": [
+      "class-person",
+      "quality-notes",
+      "class-truck",
+      "class-car",
+      "class-traffic light",
+      "dataset-overview"
+    ],
+    "tool_calls": [
+      {
+        "round": 0,
+        "name": "find_suspicious_annotations",
+        "arguments": {
+          "max_area": 1024
+        },
+        "result": {
+          "thresholds": {
+            "max_area_px2": 1024,
+            "iou_threshold": 0.7
+          },
+          "tiny_boxes": {
+            "count": 201,
+            "percent_of_dataset": 4.14,
+            "examples": [
+              {
+                "annotation_id": 729,
+                "image_id": 86,
+                "class_name": "traffic light",
+                "area_px2": 58.1,
+                "bbox": [
+                  0.0,
+                  281.9,
+                  3.4,
+                  16.9
+                ]
+              },
+              {
+                "annotation_id": 182,
+                "image_id": 29,
+                "class_name": "traffic light",
+                "area_px2": 140.1,
+                "bbox": [
+                  393.9,
+                  751.7,
+                  9.6,
+                  14.6
+                ]
+              },
+              {
+                "annotation_id": 4522,
+                "image_id": 392,
+                "class_name": "traffic light",
+                "area_px2": 179.1,
+                "bbox": [
+                  143.7,
+                  162.4,
+                  14.3,
+                  12.5
+                ]
+              },
+              {
+                "annotation_id": 3173,
+                "image_id": 301,
+                "class_name": "traffic light",
+                "area_px2": 179.5,
+                "bbox": [
+                  576.6,
+                  435.9,
+                  12.2,
+                  14.8
+                ]
+              },
+              {
+                "annotation_id": 4525,
+                "image_id": 392,
+                "class_name": "traffic light",
+                "area_px2": 209.6,
+                "bbox": [
+                  217.0,
+                  209.6,
+                  12.5,
+                  16.8
+                ]
+              },
+              {
+                "annotation_id": 672,
+                "image_id": 79,
+                "class_name": "traffic light",
+                "area_px2": 244.8,
+                "bbox": [
+                  1059.8,
+                  348.7,
+                  16.9,
+                  14.5
+                ]
+              },
+              {
+                "annotation_id": 1129,
+                "image_id": 115,
+                "class_name": "traffic light",
+                "area_px2": 252.8,
+                "bbox": [
+                  159.6,
+                  435.4,
+                  11.0,
+                  22.9
+                ]
+              },
+              {
+                "annotation_id": 4324,
+                "image_id": 374,
+                "class_name": "traffic light",
+                "area_px2": 253.3,
+                "bbox": [
+                  1556.1,
+                  741.5,
+                  12.2,
+                  20.7
+                ]
+              },
+              {
+                "annotation_id": 116,
+                "image_id": 15,
+                "class_name": "traffic light",
+                "area_px2": 257.7,
+                "bbox": [
+                  1152.2,
+                  637.6,
+                  10.3,
+                  25.1
+                ]
+              },
+              {
+                "annotation_id": 127,
+                "image_id": 15,
+                "class_name": "person",
+                "area_px2": 260.0,
+                "bbox": [
+                  1111.9,
+                  681.0,
+                  18.1,
+                  14.4
+                ]
+              }
+            ]
+          },
+          "near_duplicate_pairs": {
+            "count": 57,
+            "examples": [
+              {
+                "image_id": 79,
+                "class_name": "car",
+                "iou": 0.982,
+                "annotation_ids": [
+                  665,
+                  669
+                ]
+              },
+              {
+                "image_id": 250,
+                "class_name": "person",
+                "iou": 0.963,
+                "annotation_ids": [
+                  2663,
+                  2677
+                ]
+              },
+              {
+                "image_id": 64,
+                "class_name": "person",
+                "iou": 0.962,
+                "annotation_ids": [
+                  422,
+                  428
+                ]
+              },
+              {
+                "image_id": 110,
+                "class_name": "car",
+                "iou": 0.957,
+                "annotation_ids": [
+                  1102,
+                  1103
+                ]
+              },
+              {
+                "image_id": 195,
+                "class_name": "car",
+                "iou": 0.923,
+                "annotation_ids": [
+                  1592,
+                  1593
+                ]
+              },
+              {
+                "image_id": 219,
+                "class_name": "car",
+                "iou": 0.9,
+                "annotation_ids": [
+                  2344,
+                  2355
+                ]
+              },
+              {
+                "image_id": 350,
+                "class_name": "person",
+                "iou": 0.895,
+                "annotation_ids": [
+                  4121,
+                  4145
+                ]
+              },
+              {
+                "image_id": 330,
+                "class_name": "person",
+                "iou": 0.835,
+                "annotation_ids": [
+                  3774,
+                  3776
+                ]
+              },
+              {
+                "image_id": 307,
+                "class_name": "person",
+                "iou": 0.829,
+                "annotation_ids": [
+                  3267,
+                  3269
+                ]
+              },
+              {
+                "image_id": 215,
+                "class_name": "car",
+                "iou": 0.816,
+                "annotation_ids": [
+                  2195,
+                  2212
+                ]
+              }
+            ]
+          },
+          "boxes_outside_image_bounds": {
+            "count": 0,
+            "examples": []
+          },
+          "oversized_boxes": {
+            "count": 12,
+            "percent_of_dataset": 0.25,
+            "note": "box covers more than 50% of its image. Manual inspection found these labels to be correct: they are close-up photographs of a single vehicle. Treat them as a sign that the image is an object close-up rather than a street scene, not as a labelling error.",
+            "examples": [
+              {
+                "annotation_id": 4437,
+                "image_id": 385,
+                "class_name": "car",
+                "fraction_of_image": 0.921,
+                "area_px2": 1961468.2,
+                "score": 0.548
+              },
+              {
+                "annotation_id": 4782,
+                "image_id": 436,
+                "class_name": "car",
+                "fraction_of_image": 0.918,
+                "area_px2": 11207482.3,
+                "score": 0.431
+              },
+              {
+                "annotation_id": 4671,
+                "image_id": 410,
+                "class_name": "car",
+                "fraction_of_image": 0.857,
+                "area_px2": 1332652.6,
+                "score": 0.48
+              },
+              {
+                "annotation_id": 4519,
+                "image_id": 392,
+                "class_name": "car",
+                "fraction_of_image": 0.683,
+                "area_px2": 962314.8,
+                "score": 0.554
+              },
+              {
+                "annotation_id": 4634,
+                "image_id": 405,
+                "class_name": "car",
+                "fraction_of_image": 0.674,
+                "area_px2": 1877690.8,
+                "score": 0.519
+              },
+              {
+                "annotation_id": 4662,
+                "image_id": 408,
+                "class_name": "car",
+                "fraction_of_image": 0.668,
+                "area_px2": 1860352.5,
+                "score": 0.789
+              },
+              {
+                "annotation_id": 4729,
+                "image_id": 431,
+                "class_name": "car",
+                "fraction_of_image": 0.654,
+                "area_px2": 1035197.4,
+                "score": 0.444
+              },
+              {
+                "annotation_id": 4631,
+                "image_id": 402,
+                "class_name": "car",
+                "fraction_of_image": 0.641,
+                "area_px2": 1999141.0,
+                "score": 0.345
+              },
+              {
+                "annotation_id": 2569,
+                "image_id": 232,
+                "class_name": "traffic light",
+                "fraction_of_image": 0.615,
+                "area_px2": 2948377.2,
+                "score": 0.727
+              },
+              {
+                "annotation_id": 2781,
+                "image_id": 265,
+                "class_name": "truck",
+                "fraction_of_image": 0.61,
+                "area_px2": 2998888.2,
+                "score": 0.441
+              }
+            ]
+          },
+          "low_confidence_boxes": {
+            "count": 1228,
+            "percent_of_dataset": 25.28,
+            "note": "detector score below 0.35"
+          }
+        }
+      }
+    ],
+    "answer": "Yes, there are 201 bounding boxes in the dataset that are considered suspiciously small (defined as having an area smaller than 1024 square pixels). These account for 4.14% of all annotations.\n\nRegarding these boxes:\n*   **Quantification:** The smallest box in the dataset is 58 square pixels.\n*   **Class Distribution:** While the tool output shows a high concentration of these small boxes belonging to the \"traffic light\" class, they are present across the dataset.\n*   **Likelihood of Error:** These are highly likely to be labelling errors. As noted in the quality documentation, very small boxes in this dataset are typically detector noise—often misidentifying distant or partly hidden objects—rather than genuine instances. A human auditor should review these to determine if they should be removed."
+  },
+  {
+    "scenario": 2,
+    "question": "Is this dataset class balanced? If not, which classes are under-represented and what problems should I expect when training a detector on it?",
+    "model": "gemini-3.1-flash-lite",
+    "retrieved_chunk_ids": [
+      "class-car",
+      "class-truck",
+      "class-person",
+      "class-traffic light",
+      "dataset-overview",
+      "quality-notes"
+    ],
+    "tool_calls": [
+      {
+        "round": 0,
+        "name": "check_class_balance",
+        "arguments": {},
+        "result": {
+          "total_annotations": 4857,
+          "total_images": 250,
+          "per_class": [
+            {
+              "class_name": "car",
+              "instances": 2127,
+              "share_percent": 43.79,
+              "images_containing": 216,
+              "image_coverage_percent": 86.4
+            },
+            {
+              "class_name": "person",
+              "instances": 1819,
+              "share_percent": 37.45,
+              "images_containing": 213,
+              "image_coverage_percent": 85.2
+            },
+            {
+              "class_name": "traffic light",
+              "instances": 530,
+              "share_percent": 10.91,
+              "images_containing": 181,
+              "image_coverage_percent": 72.4
+            },
+            {
+              "class_name": "truck",
+              "instances": 381,
+              "share_percent": 7.84,
+              "images_containing": 168,
+              "image_coverage_percent": 67.2
+            }
+          ],
+          "imbalance_ratio": 5.58,
+          "most_common": "car",
+          "least_common": "truck"
+        }
+      }
+    ],
+    "answer": "The dataset is not class balanced. The imbalance ratio between the most frequent class (**car**, 2,127 instances) and the least frequent class (**truck**, 381 instances) is **5.58 to 1**.\n\n### Class Distribution\n| Class | Instances | Share (%) |\n| :--- | :--- | :--- |\n| car | 2127 | 43.79% |\n| person | 1819 | 37.45% |\n| traffic light | 530 | 10.91% |\n| truck | 381 | 7.84% |\n\n### Expected Training Problems\nGiven that the labels were generated by a zero-shot detector without human review, you should expect the following issues when training a detector:\n\n1.  **Class Bias:** The model will likely be biased toward predicting \"car\" and \"person\" due to their significantly higher representation. The \"truck\" and \"traffic light\" classes are under-represented and may suffer from lower recall.\n2.  **Label Noise:** The overall median detector confidence is low (0.43), and approximately 25% of all boxes have a confidence score below 0.35. This indicates high uncertainty in the ground truth labels.\n3.  **Duplicate Detections:** There are **57 pairs** of same-class boxes with an IoU > 0.7, suggesting the detector frequently fired multiple times on the same object.\n4.  **Small Object Noise:** There are **201 boxes** smaller than 32x32 pixels. These are often detector noise rather than genuine instances and may degrade performance if the model learns to predict these artifacts.\n5.  **Domain Inconsistency:** While the dataset is intended for street scenes, it contains close-up photographs where a single object fills the frame. This inconsistency in image composition may confuse the model during training."
+  },
+  {
+    "scenario": 3,
+    "question": "Based on the annotations and the training log together, what is the single biggest risk to this model's accuracy, and what would you fix first?",
+    "model": "gemini-3.1-flash-lite",
+    "retrieved_chunk_ids": [
+      "quality-notes",
+      "training-diagnostics",
+      "class-truck",
+      "class-person",
+      "class-car",
+      "training-epoch-26"
+    ],
+    "tool_calls": [
+      {
+        "round": 0,
+        "name": "summarise_training",
+        "arguments": {},
+        "result": {
+          "is_smoke_test": false,
+          "run_validity": "This was a full training run, so its metrics are meaningful.",
+          "batches_per_epoch": 21,
+          "train_images": 175,
+          "epochs_completed": 53,
+          "best_epoch_by_mAP50": {
+            "epoch": 40,
+            "val_mAP50": 0.0244,
+            "val_loss": 3.6662
+          },
+          "lowest_val_loss": {
+            "epoch": 47,
+            "val_loss": 3.6324
+          },
+          "first_epoch_train_loss": 8.4412,
+          "final_train_loss": 2.9189,
+          "final_val_loss": 3.6681,
+          "generalisation_gap": 0.7492,
+          "gap_interpretation": "validation loss well above training loss, which suggests overfitting",
+          "total_minutes": 146.8,
+          "pipeline_sanity_check": "scripts/overfit_check.py trained this exact model, loss and decoder on one fixed batch of 4 images and reached mAP@0.5 0.984 on them, loss 8.41 -> 0.053, with exact box counts recovered. A pipeline bug makes that impossible, and so does unlearnable label noise. So a low mAP on the real split is NOT evidence of broken code or of bad labels.",
+          "limiting_factor": "Only 175 training images are available for a detector trained from scratch. That, not code or labels, is what caps the validation mAP here."
+        }
+      }
+    ],
+    "answer": "The single biggest risk to the model's accuracy is the **extremely small dataset scale**. With only 175 training images available for a detector trained from random initialization, the model lacks sufficient data to generalize, as evidenced by the significant generalization gap (0.7492) and the validation mAP@0.5 peaking at only 0.0244.\n\nWhile the dataset contains label noise (such as 201 boxes smaller than 32x32 pixels and 57 overlapping duplicate detections), the training diagnostics confirm that the annotations are \"learnable signal\" rather than noise. Therefore, fixing label quality is a secondary concern.\n\n**What to fix first:**\nI would prioritize **increasing the size of the training dataset**. The current scale is the binding constraint on performance. If collecting more data is not possible, I would implement aggressive data augmentation to artificially expand the training set and help mitigate the overfitting indicated by the training logs."
+  },
+  {
+    "scenario": 4,
+    "question": "How many 'car' boxes have an area between 2000 and 20000 square pixels, and how does the median car box area compare with the median over every class?",
+    "model": "gemini-3.1-flash-lite",
+    "retrieved_chunk_ids": [
+      "image-50",
+      "image-199",
+      "image-364",
+      "image-119",
+      "image-374",
+      "image-363"
+    ],
+    "tool_calls": [
+      {
+        "round": 0,
+        "name": "compute_box_statistics",
+        "arguments": {
+          "class_name": "car",
+          "max_area": 20000,
+          "min_area": 2000
+        },
+        "result": {
+          "filter": {
+            "class_name": "car",
+            "min_area": 2000,
+            "max_area": 20000
+          },
+          "matching_boxes": 950,
+          "share_of_dataset_percent": 19.56,
+          "area_px2": {
+            "min": 2007.3,
+            "p25": 4556.6,
+            "median": 7328.3,
+            "p75": 11926.6,
+            "max": 19976.0,
+            "mean": 8487.0
+          },
+          "equivalent_square_side_px": {
+            "median": 85.6
+          },
+          "per_class": {
+            "car": 950
+          }
+        }
+      },
+      {
+        "round": 0,
+        "name": "compute_box_statistics",
+        "arguments": {
+          "class_name": "car"
+        },
+        "result": {
+          "filter": {
+            "class_name": "car",
+            "min_area": null,
+            "max_area": null
+          },
+          "matching_boxes": 2127,
+          "share_of_dataset_percent": 43.79,
+          "area_px2": {
+            "min": 276.7,
+            "p25": 5874.2,
+            "median": 17347.3,
+            "p75": 61620.0,
+            "max": 11207482.3,
+            "mean": 115228.5
+          },
+          "equivalent_square_side_px": {
+            "median": 131.7
+          },
+          "per_class": {
+            "car": 2127
+          }
+        }
+      },
+      {
+        "round": 0,
+        "name": "compute_box_statistics",
+        "arguments": {},
+        "result": {
+          "filter": {
+            "class_name": null,
+            "min_area": null,
+            "max_area": null
+          },
+          "matching_boxes": 4857,
+          "share_of_dataset_percent": 100.0,
+          "area_px2": {
+            "min": 58.1,
+            "p25": 5696.0,
+            "median": 17072.1,
+            "p75": 55389.6,
+            "max": 11207482.3,
+            "mean": 100907.5
+          },
+          "equivalent_square_side_px": {
+            "median": 130.7
+          },
+          "per_class": {
+            "person": 1819,
+            "truck": 381,
+            "car": 2127,
+            "traffic light": 530
+          }
+        }
+      }
+    ],
+    "answer": "There are 950 'car' boxes with an area between 2,000 and 20,000 square pixels.\n\nThe median area for 'car' boxes is 17,347.3 square pixels, while the median area across all classes in the dataset is 17,072.1 square pixels. The median car box area is slightly larger than the overall dataset median."
+  }
+]

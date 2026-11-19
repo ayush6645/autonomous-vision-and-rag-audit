@@ -1,0 +1,23 @@
+# Phase 1 - collection and zero-shot annotation
+playwright==1.63.0
+requests==2.34.2
+Pillow==12.3.0
+python-dotenv==1.2.2
+
+# Phase 1/2 - vision, geometry and modelling
+opencv-python==4.10.0.84
+numpy==2.4.6
+torch==2.7.1
+transformers==4.46.3
+pycocotools==2.0.8
+
+# Phase 2 - experiment tracking
+tensorboard==2.21.0
+
+# Phase 3 - agentic RAG auditor
+chromadb==1.5.9
+sentence-transformers==6.3.0
+google-genai==1.75.0
+
+# Development
+pytest==8.3.4
